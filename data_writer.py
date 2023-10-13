@@ -1,5 +1,18 @@
 from decouple import config
 import pyodbc
+"""
+data_writer.py - Writes data to a SQL Server database.
+
+Usage:
+    from data_writer import write_to_db
+
+Arguments:
+    data: The data to write to the database.
+
+Description:
+    This script contains functions for writing data to a SQL Server database.
+    It uses the pyodbc library to connect to the database and execute SQL queries.
+"""
 
 
 # ref: https://chat.openai.com/share/cd81b52d-b14c-4c71-9934-a922eac5081e

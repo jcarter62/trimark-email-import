@@ -2,9 +2,27 @@ import argparse
 import os
 import shutil
 from datetime import datetime
-
 from excel_reader import ExcelReader
 from data_writer import DataWriter
+
+"""
+main.py - Entry point for the Trimark Email Import application.
+
+Usage:
+    python main.py -i input.xlsx -a process -d destination_folder
+
+Arguments:
+    -i, --input: The input Excel file to read.
+    -f, --folder: The folder containing the Excel files to read.
+    -a, --action: The action to perform (e.g., 'process').
+    -d, --destination: The destination folder for processed files.
+
+Description:
+    This script serves as the entry point for the application.
+    It uses argparse to handle command-line arguments and calls
+    the appropriate functions for reading Excel files and writing
+    to a SQL Server database.
+"""
 
 
 dataobj = {

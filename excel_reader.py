@@ -1,4 +1,18 @@
 import openpyxl
+"""
+excel_reader.py - Reads Excel files and stores the data.
+
+Usage:
+    from excel_reader import read_excel
+
+Arguments:
+    filename: The Excel file to read.
+
+Description:
+    This script contains functions for reading Excel files.
+    It uses the openpyxl library to read Excel files and stores
+    the data in a list of dictionaries for further processing.
+"""
 
 
 class ExcelReader:
