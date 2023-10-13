@@ -34,8 +34,15 @@ DB_NAME=DatabaseName
 The `main.py` script is the entry point of the application. It uses `argparse` to handle command-line arguments.
 
 ``` bash
-python main.py -i input.xlsx -a process -d destination_folder
+python main.py -i input.xlsx -f input-folder -a process -d destination_folder
 ```
+
+The `-i` argument is used to specify a single Excel file to process. The `-f` argument is used to specify a folder containing Excel files to process. The `-a` argument is used to specify the action to perform. The `-d` argument is used to specify the destination folder for the processed files.  
+
+Required arguments:
+* `-i` or `-f`
+* `-a`
+* `-d` if `-a` is `process`
 
 ### Excel Reader
 
