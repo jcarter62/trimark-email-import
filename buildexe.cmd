@@ -1,2 +1,2 @@
-.\venv\Scripts\pyinstaller.exe main.py -i trimark.ico
+.\venv\Scripts\pyinstaller.exe main.py -i trimark.ico --noconfirm
 

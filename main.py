@@ -76,22 +76,24 @@ def move_input_file(file_path, destination_folder) -> bool:
 
 def main():
     parser = argparse.ArgumentParser(description="File Operations")
-    parser.add_argument("-i", "--input", required=False, help="Input filename")
-    parser.add_argument("-f", "--folder", required=False, help="Input Folder containing .xlsx file(s)")
+    parser.add_argument("-i", "--input", required=True, help="Input filename or Folder containing .xlsx file(s)")
     parser.add_argument("-a", "--action", required=True, choices=["process", "view"], help="Action to perform: process or view")
     parser.add_argument("-d", "--destination", required=False, help="Destination folder (required for 'process' action)")
+    parser.add_help = True
 
     args = parser.parse_args()
 
-    print(args)
-
-    if args.input is None and args.folder is None:
-        print("Error: Either input file or input folder is required.")
+    # check to see if x.env file exists
+    if not os.path.exists(".env"):
+        print("Error: .env file not found.")
         return
 
-    if args.folder is not None:
+    # check if args.input is a folder
+    isFolder = os.path.isdir(args.input)
+
+    if isFolder:
         # need to inspect folder to see if it contains .xlsx files
-        folder = args.folder
+        folder = args.input
         if os.path.isdir(folder):
             # get list of files in the folder
             files = os.listdir(folder)
@@ -111,7 +113,7 @@ def main():
                     elif args.action == "view":
                         view_file(file_path)
     else:
-        # we have one file to process
+        # we have one file to process or view
         if args.action == "process":
             process_file(args.input, args.destination)
         elif args.action == "view":
@@ -119,8 +121,4 @@ def main():
 
 
 if __name__ == "__main__":
-    # check to see if x.env file exists
-    if not os.path.exists(".env"):
-        print("Error: .env file not found.")
-    else:
-        main()
+    main()
