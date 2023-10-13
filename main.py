@@ -119,4 +119,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    # check to see if x.env file exists
+    if not os.path.exists(".env"):
+        print("Error: .env file not found.")
+    else:
+        main()
