@@ -1,2 +1,5 @@
-.\venv\Scripts\pyinstaller.exe main.py -i trimark.ico --noconfirm
+cd c:\projects\trimark
+erase dist /q
+.\venv\Scripts\pyinstaller.exe --onefile --icon=trimark.ico --noconfirm --clean main.py
+
 

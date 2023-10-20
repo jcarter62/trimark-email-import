@@ -74,8 +74,8 @@ def move_input_file(file_path, destination_folder) -> bool:
         return False
 
 
-def main(exec_file_name, version):
-    parser = argparse.ArgumentParser(description="Trimark File Import Application - " + exec_file_name + " - v" + version)
+def main(exec_file_name, versionStr):
+    parser = argparse.ArgumentParser(description="Trimark File Import Application - " + exec_file_name + " - v" + versionStr)
     parser.add_argument("-i", "--input", required=True, help="Input filename or Folder containing .xlsx file(s)")
     parser.add_argument("-a", "--action", required=True, choices=["process", "view"], help="Action to perform: process or view")
     parser.add_argument("-d", "--destination", required=False, help="Destination folder (required for 'process' action)")
@@ -122,5 +122,5 @@ def main(exec_file_name, version):
 
 if __name__ == "__main__":
     exe_file_name = os.path.basename(__file__)
-    version = "2023.10.13.0"
-    main(exe_file_name, version)
+    versionStr = "2023.10.13.0"
+    main(exe_file_name, versionStr)
