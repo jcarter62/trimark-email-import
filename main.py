@@ -57,8 +57,7 @@ def extract_file_name(file_path) -> str:
 
 def calculate_destination_file(file_path, destination_folder) -> str:
     file_name = extract_file_name(file_path)
-    # prepend YYYYMMDD-HHMM to the new_name
-    new_name = f"{datetime.now().strftime('%Y%m%d-%H%M')}-{file_name}"
+    new_name = f"{datetime.now().strftime('%Y%m%d-%H%M%S')}-{file_name}"
     # calculate the new file name
     new_file_name = os.path.join(destination_folder, new_name)
     return new_file_name
@@ -122,5 +121,5 @@ def main(exec_file_name, versionStr):
 
 if __name__ == "__main__":
     exe_file_name = os.path.basename(__file__)
-    versionStr = "2023.10.13.0"
+    versionStr = "2023.10.23.0"
     main(exe_file_name, versionStr)
